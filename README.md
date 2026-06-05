@@ -57,4 +57,21 @@ All contours were generated using ANSYS Fluent post-processing and are saved und
 3. **Velocity Magnitude Contour & Vector Plots**: Confirms the boundary layer no-slip condition along the walls and illustrates smooth, unseparated streamlines entering the compressor face.
 4. **Wall Shear Stress**: Illustrates that shear stress remains near zero in the bellmouth inlet but increases near the nozzle throat due to high velocity gradients ($\frac{\partial u}{\partial y}$).
 
-*Check out the [Images Folder](file:///C:/Users/LLM-Test/.gemini/antigravity-ide/scratch/opprah-portfolio/Bellmouth-Inlet-CFD-Gas-Turbine/images/) for the simulation results.*
+*Check out the [Images Folder](file:///C:/Users/LLM-Test/.gemini/antigravity-ide/scratch/opprah-portfolio/Bellmouth-Inlet-CFD-Gas-Turbine/images/) for the simulation results.
+
+---
+
+## 🛠️ How to Run & View the Simulation
+This study involves Solidworks design files and an ANSYS Fluent numerical setup:
+1. **Prerequisites**: Solidworks (for CAD modification) and ANSYS Workbench (with Fluent module).
+2. **Steps to Run**:
+   - Open **Solidworks** to view or export the elliptical bellmouth inlet geometry model.
+   - Import the geometry into **ANSYS Design Modeler** or **SpaceClaim**.
+   - Create named sections for boundary conditions: `inlet`, `outlet`, `upper_wall`, `lower_wall`, and `interior`.
+   - Discretize the domain in the **ANSYS Meshing** cell with a target element size of $10\text{ mm}$ (validate Skewness $< 0.1$, Orthogonal Quality $> 95\%$).
+   - In **Fluent**, choose the **Standard $k-\epsilon$ (SKE)** viscous turbulence model.
+   - Apply boundary conditions: Total Gauge Pressure = $101,325\text{ Pa}$ (Inlet), Static Gauge Pressure = $96,366.32\text{ Pa}$ (Outlet).
+   - Set solver method to **SIMPLE** or **coupled** velocity-pressure coupling.
+   - Run **Hybrid Initialization** and compute for $1000$ iterations until convergence ($10^{-6}$ error threshold).
+   - View results in Fluent post-processing contours or CFD-Post.
+*
