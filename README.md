@@ -307,3 +307,5 @@ The line between the two lists is not always sharp: the ANSYS skills were taught
 `cfd` `ansys-fluent` `bellmouth-inlet` `gas-turbine` `aerospace-engineering` `aerodynamics`
 `fluid-dynamics` `heat-transfer` `von-karman` `boundary-layer` `turbomachinery`
 `engineering-simulation`
+
+<!-- cache-bust: 2026-06-06-1455 -->
