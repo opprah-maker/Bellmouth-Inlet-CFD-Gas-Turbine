@@ -19,7 +19,8 @@
 5. [Key Results](#5-key-results)
 6. [Figure Reference &amp; Captions](#6-figure-reference--captions)
 7. [How to Reproduce](#7-how-to-reproduce)
-8. [Topics](#8-topics)
+8. [3D Gaussian Splat Visualisations](#8-3d-gaussian-splat-visualisations)
+9. [Topics](#9-topics)
 
 ---
 
@@ -140,6 +141,46 @@ This work was performed inside ANSYS Workbench. To reproduce:
 The original ANSYS Workbench project files (`.wbpj`, `.agdb`, `.msh`, `.cas.h5`, `.set`,
 `.mshdb`) are very large (several GB) and are not stored in this repository. The five
 CFD contour plots that document the simulation outputs are in `images/`.
+
+---
+
+## 8. 3D Gaussian Splat Visualisations
+
+Four figures from this project were also reconstructed as interactive 3D Gaussian splat previews using TripoSR (stabilityai/TripoSR, CPU inference) plus a custom mesh-to-splat converter. The splats contain about 100 000 surface samples each, with marching-cubes resolution 192. Drag to orbit, scroll to zoom.
+
+### 8.1 Inlet mesh layout (from figure 3)
+
+<iframe src="https://opprah-maker.github.io/splat/?s=bell_03" width="100%" height="500" style="border:1px solid #ddd;border-radius:8px;" loading="lazy" title="3D Gaussian Splat: bellmouth inlet mesh"></iframe>
+
+[View in full screen](https://opprah-maker.github.io/splat/?s=bell_03)
+
+### 8.2 Static pressure field (from figure 8)
+
+<iframe src="https://opprah-maker.github.io/splat/?s=bell_08" width="100%" height="500" style="border:1px solid #ddd;border-radius:8px;" loading="lazy" title="3D Gaussian Splat: bellmouth pressure field"></iframe>
+
+[View in full screen](https://opprah-maker.github.io/splat/?s=bell_08)
+
+### 8.3 Lip-region mesh refinement (from figure 2)
+
+<iframe src="https://opprah-maker.github.io/splat/?s=bell_02" width="100%" height="500" style="border:1px solid #ddd;border-radius:8px;" loading="lazy" title="3D Gaussian Splat: bellmouth mesh refinement"></iframe>
+
+[View in full screen](https://opprah-maker.github.io/splat/?s=bell_02)
+
+### 8.4 Wall shear stress (from figure 6)
+
+<iframe src="https://opprah-maker.github.io/splat/?s=bell_06" width="100%" height="500" style="border:1px solid #ddd;border-radius:8px;" loading="lazy" title="3D Gaussian Splat: bellmouth wall shear"></iframe>
+
+[View in full screen](https://opprah-maker.github.io/splat/?s=bell_06)
+
+### 8.5 Generation notes
+
+- Model: TripoSR (stabilityai/TripoSR), CPU inference, about 20-30 s per image
+- Marching cubes: scikit-image (CUDA-only `torchmcubes` was patched out)
+- Surface sampling: trimesh, 100 000 points, face-normal quaternion encoding
+- Splat format: antimatter15/splat, 32 bytes per splat
+- Hardware: GTX 1050, 2 GB VRAM, no CUDA toolkit, CPU mode
+
+The full 3D splat gallery is at <https://opprah-maker.github.io/#3d>.
 
 ---
 
