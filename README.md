@@ -285,13 +285,18 @@ The `.cas.h5` and `.msh` files in `original/` are the raw ANSYS Workbench files 
 
 ## 11. Engineering tools: what was taught, what was self-taught
 
-**Taught during the undergraduate programme (Brunel University, Aerospace Engineering):**
+**Taught during the undergraduate programme (Wrexham University, BEng Aeronautical and Mechanical Engineering, 2016 to 2020):**
 
-- ANSYS Fluent for steady-state RANS analysis of internal flows, including the k-epsilon and k-omega families of turbulence models.
-- ANSYS DesignModeler and ANSYS Meshing for geometry clean-up and mesh generation.
-- Theoretical aerodynamics (potential flow, boundary-layer theory, panel methods).
-- Gas-turbine theory (inlet design, compressor and turbine performance, combustor design).
-- Technical report writing in British English.
+The numerical methods, aerodynamics, and report-writing skills that underpin this project were taught in the BEng programme. The exact combination of modules and the specific commercial software in use at the time are not separately itemised here, because the value of this section is in the boundary between the taught chapter and the self-taught chapter that follows, not in a module-by-module transcript.
+
+In broad terms, the taught chapter covered:
+
+- The engineering mathematics that supports the work: differential equations, numerical methods, and stability analysis.
+- The relevant engineering science for each project (aerodynamics, heat transfer, energy systems, or aircraft design, depending on the assignment).
+- MATLAB for numerical-modelling assignments, including vectorised array operations, plotting, and small optimisation problems.
+- Technical report writing in British English, including structure, figure presentation, and referencing.
+
+The remainder of the work in this repository (the choice of specific software, the design of the figures, the addition of 3D visualisations, the conversion of Excel data to web-friendly formats, and the way the report is published on GitHub) is the self-taught chapter below.
 
 **Self-taught after graduation, in the home laboratory:**
 
