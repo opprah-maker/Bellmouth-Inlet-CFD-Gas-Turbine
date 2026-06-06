@@ -2,7 +2,7 @@
 
 > Design and CFD optimisation of an elliptical bellmouth inlet to minimise inlet pressure
 > losses and maximise mass flow rate for a gas turbine engine. Solved in ANSYS Fluent
-> with the standard $k-\epsilon$ turbulence model.
+> with the standard k-epsilon turbulence model.
 
 [![ANSYS Fluent](https://img.shields.io/badge/ANSYS%20Fluent-CFD-FFB71B?logo=ansys&logoColor=black)]()
 [![Bellmouth](https://img.shields.io/badge/Geometry-Elliptical%20inlet-blue)]()
@@ -29,8 +29,8 @@
 This repository contains the CFD study of a bellmouth (flow-conditioning) inlet for a gas
 turbine engine. The objective is to:
 
-- Minimise the total-pressure loss coefficient $\zeta = (p_{t,\infty} - p_{t,\text{exit}})/(p_{t,\infty} - p_\infty)$
-- Maximise the mass flow rate $\dot{m} = \rho A V$ for a given upstream stagnation pressure
+- Minimise the total-pressure loss coefficient \zeta = (pt,inf - p_t,exit)/(pt,inf - p_inf)
+- Maximise the mass flow rate \dotm = rho A V for a given upstream stagnation pressure
 - Characterise the wall-shear, static-pressure, and velocity contours
 
 The validation uses the **von K\&aacute;rm\&aacute;n integral boundary layer method** for
@@ -50,12 +50,12 @@ adverse pressure gradient flows.
 
 | Parameter | Value |
 |---|---|
-| Inlet diameter | $D = 100\,\text{mm}$ |
-| Wall thickness | $t = 2\,\text{mm}$ |
-| Ellipse ratio | $a/b = 0.5$ |
-| Inlet length | $L = 4D$ |
-| Mesh elements | $\sim 1.2\,\text{M}$ (unstructured tetrahedra) |
-| $y^+$ on the wall | $< 1$ (inflation layers) |
+| Inlet diameter | D = 100mm |
+| Wall thickness | t = 2mm |
+| Ellipse ratio | a/b = 0.5 |
+| Inlet length | L = 4D |
+| Mesh elements | ~ 1.2M (unstructured tetrahedra) |
+| y⁺ on the wall | < 1 (inflation layers) |
 
 ---
 
@@ -63,8 +63,8 @@ adverse pressure gradient flows.
 
 | Boundary | Type | Value |
 |---|---|---|
-| Inlet | Mass flow inlet | $\dot{m} = 1.0\,\text{kg/s}$ |
-| Outlet | Pressure outlet | $p_g = 0\,\text{Pa}$ |
+| Inlet | Mass flow inlet | \dotm = 1.0kg/s |
+| Outlet | Pressure outlet | pg = 0Pa |
 | Bellmouth wall | No-slip wall | Standard wall functions |
 | Symmetry plane | Symmetry | : |
 
@@ -73,9 +73,9 @@ adverse pressure gradient flows.
 ## 5. Solver
 
 - ANSYS Fluent, pressure-based, steady
-- Standard $k-\epsilon$ turbulence model with enhanced wall treatment
+- Standard k-epsilon turbulence model with enhanced wall treatment
 - Second-order upwind discretisation
-- Convergence: residuals $< 10^{-5}$
+- Convergence: residuals < 10⁻⁵
 
 ---
 
@@ -83,10 +83,10 @@ adverse pressure gradient flows.
 
 | Metric | Value |
 |---|---|
-| Mass flow rate | $\dot{m} = 1.0\,\text{kg/s}$ |
-| Total-pressure recovery | $\eta_p > 0.99$ |
-| Inlet distortion (DC60) | $< 0.05$ |
-| Wall shear stress (peak) | $\tau_w \approx 4.2\,\text{Pa}$ |
+| Mass flow rate | \dotm = 1.0kg/s |
+| Total-pressure recovery | \etap > 0.99 |
+| Inlet distortion (DC60) | < 0.05 |
+| Wall shear stress (peak) | \tauw ~= 4.2Pa |
 
 ---
 
@@ -127,16 +127,16 @@ All 23 figures from the bellmouth inlet CFD report. Each is linked to its file i
 This work was performed inside ANSYS Workbench. To reproduce:
 
 1. Reconstruct the bellmouth geometry in **ANSYS DesignModeler** (an elliptical contour
-   with $a/b = 0.5$ revolved around the centreline).
+ with a/b = 0.5 revolved around the centreline).
 2. Generate the mesh in **ANSYS Meshing** with inflation layers on the wall such that
-   $y^+ < 1$ for the expected $Re$.
+ y⁺ < 1 for the expected Re.
 3. Open **ANSYS Fluent**:
-   - Set the inlet as a mass flow inlet at $\dot{m} = 1.0\,\text{kg/s}$.
-   - Enable the standard $k-\epsilon$ model with enhanced wall treatment.
-   - Use second-order upwind for momentum, $k$, and $\epsilon$.
-   - Run to convergence with residuals $< 10^{-5}$.
+ - Set the inlet as a mass flow inlet at \dotm = 1.0kg/s.
+ - Enable the standard k-epsilon model with enhanced wall treatment.
+ - Use second-order upwind for momentum, k, and epsilon.
+ - Run to convergence with residuals < 10⁻⁵.
 4. Post-process the contours in **CFD-Post** to extract the static, dynamic, and total
-   pressure fields, the wall-shear stress, and the velocity magnitude on the symmetry plane.
+ pressure fields, the wall-shear stress, and the velocity magnitude on the symmetry plane.
 
 The original ANSYS Workbench project files (`.wbpj`, `.agdb`, `.msh`, `.cas.h5`, `.set`,
 `.mshdb`) are very large (several GB) and are not stored in this repository. The five
@@ -150,27 +150,27 @@ Four figures from this project were also reconstructed as interactive 3D Gaussia
 
 ### 8.1 Inlet mesh layout (from figure 3)
 
-<iframe src="https://opprah-maker.github.io/splat/?s=bell_03" width="100%" height="500" style="border:1px solid #ddd;border-radius:8px;" loading="lazy" title="3D Gaussian Splat: bellmouth inlet mesh"></iframe>
+[![Open interactive 3D Gaussian splat of images/figure-03.png](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-03.png)](https://opprah-maker.github.io/splat/?s=bell_03 '3D Gaussian Splat viewer')
 
-[View in full screen](https://opprah-maker.github.io/splat/?s=bell_03)
+[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/?s=bell_03) hosted on the portfolio site
 
 ### 8.2 Static pressure field (from figure 8)
 
-<iframe src="https://opprah-maker.github.io/splat/?s=bell_08" width="100%" height="500" style="border:1px solid #ddd;border-radius:8px;" loading="lazy" title="3D Gaussian Splat: bellmouth pressure field"></iframe>
+[![Open interactive 3D Gaussian splat of images/figure-08.png](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-08.png)](https://opprah-maker.github.io/splat/?s=bell_08 '3D Gaussian Splat viewer')
 
-[View in full screen](https://opprah-maker.github.io/splat/?s=bell_08)
+[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/?s=bell_08) hosted on the portfolio site
 
 ### 8.3 Lip-region mesh refinement (from figure 2)
 
-<iframe src="https://opprah-maker.github.io/splat/?s=bell_02" width="100%" height="500" style="border:1px solid #ddd;border-radius:8px;" loading="lazy" title="3D Gaussian Splat: bellmouth mesh refinement"></iframe>
+[![Open interactive 3D Gaussian splat of images/figure-02.jpeg](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-02.jpeg)](https://opprah-maker.github.io/splat/?s=bell_02 '3D Gaussian Splat viewer')
 
-[View in full screen](https://opprah-maker.github.io/splat/?s=bell_02)
+[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/?s=bell_02) hosted on the portfolio site
 
 ### 8.4 Wall shear stress (from figure 6)
 
-<iframe src="https://opprah-maker.github.io/splat/?s=bell_06" width="100%" height="500" style="border:1px solid #ddd;border-radius:8px;" loading="lazy" title="3D Gaussian Splat: bellmouth wall shear"></iframe>
+[![Open interactive 3D Gaussian splat of images/figure-06.jpeg](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-06.jpeg)](https://opprah-maker.github.io/splat/?s=bell_06 '3D Gaussian Splat viewer')
 
-[View in full screen](https://opprah-maker.github.io/splat/?s=bell_06)
+[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/?s=bell_06) hosted on the portfolio site
 
 ### 8.5 Generation notes
 
