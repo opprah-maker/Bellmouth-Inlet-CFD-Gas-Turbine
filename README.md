@@ -7,9 +7,9 @@
 > losses and maximise mass flow rate for a gas turbine engine. Solved in ANSYS Fluent
 > with the standard k-epsilon turbulence model.
 
-[![ANSYS Fluent](https://img.shields.io/badge/ANSYS%20Fluent-CFD-FFB71Blogo=ansys&logoColor=black)]()
+[![ANSYS Fluent](https://img.shields.io/badge/ANSYS%20Fluent-CFD-FFB71B?logo=ansys&logoColor=black)]()
 [![Bellmouth](https://img.shields.io/badge/Geometry-Elliptical%20inlet-blue)]()
-[![Report PDF](https://img.shields.io/badge/Report-PDF-redlogo=adobe-acrobat-reader&logoColor=white)]()
+[![Report PDF](https://img.shields.io/badge/Report-PDF-red?logo=adobe-acrobat-reader&logoColor=white)]()
 
 ---
 
