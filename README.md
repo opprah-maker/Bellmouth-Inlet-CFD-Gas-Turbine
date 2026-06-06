@@ -4,9 +4,9 @@
 > losses and maximise mass flow rate for a gas turbine engine. Solved in ANSYS Fluent
 > with the standard k-epsilon turbulence model.
 
-[![ANSYS Fluent](https://img.shields.io/badge/ANSYS%20Fluent-CFD-FFB71B?logo=ansys&logoColor=black)]()
+[![ANSYS Fluent](https://img.shields.io/badge/ANSYS%20Fluent-CFD-FFB71Blogo=ansys&logoColor=black)]()
 [![Bellmouth](https://img.shields.io/badge/Geometry-Elliptical%20inlet-blue)]()
-[![Report PDF](https://img.shields.io/badge/Report-PDF-red?logo=adobe-acrobat-reader&logoColor=white)]()
+[![Report PDF](https://img.shields.io/badge/Report-PDF-redlogo=adobe-acrobat-reader&logoColor=white)]()
 
 ---
 
@@ -217,27 +217,27 @@ Four figures from this project were also reconstructed as interactive 3D Gaussia
 
 ### 8.1 Inlet mesh layout (from figure 3)
 
-[![Open interactive 3D Gaussian splat of images/figure-03.png](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-03.png)](https://opprah-maker.github.io/splat/?s=bell_03 '3D Gaussian Splat viewer')
+[![Open interactive 3D Gaussian splat of images/figure-03.png](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-03.png)](https://opprah-maker.github.io/splat/s=bell_03 '3D Gaussian Splat viewer')
 
-[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/?s=bell_03) hosted on the portfolio site
+[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/s=bell_03) hosted on the portfolio site
 
 ### 8.2 Static pressure field (from figure 8)
 
-[![Open interactive 3D Gaussian splat of images/figure-08.png](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-08.png)](https://opprah-maker.github.io/splat/?s=bell_08 '3D Gaussian Splat viewer')
+[![Open interactive 3D Gaussian splat of images/figure-08.png](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-08.png)](https://opprah-maker.github.io/splat/s=bell_08 '3D Gaussian Splat viewer')
 
-[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/?s=bell_08) hosted on the portfolio site
+[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/s=bell_08) hosted on the portfolio site
 
 ### 8.3 Lip-region mesh refinement (from figure 2)
 
-[![Open interactive 3D Gaussian splat of images/figure-02.jpeg](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-02.jpeg)](https://opprah-maker.github.io/splat/?s=bell_02 '3D Gaussian Splat viewer')
+[![Open interactive 3D Gaussian splat of images/figure-02.jpeg](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-02.jpeg)](https://opprah-maker.github.io/splat/s=bell_02 '3D Gaussian Splat viewer')
 
-[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/?s=bell_02) hosted on the portfolio site
+[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/s=bell_02) hosted on the portfolio site
 
 ### 8.4 Wall shear stress (from figure 6)
 
-[![Open interactive 3D Gaussian splat of images/figure-06.jpeg](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-06.jpeg)](https://opprah-maker.github.io/splat/?s=bell_06 '3D Gaussian Splat viewer')
+[![Open interactive 3D Gaussian splat of images/figure-06.jpeg](https://raw.githubusercontent.com/opprah-maker/Bellmouth-Inlet-CFD-Gas-Turbine/main/images/figure-06.jpeg)](https://opprah-maker.github.io/splat/s=bell_06 '3D Gaussian Splat viewer')
 
-[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/?s=bell_06) hosted on the portfolio site
+[**View in 3D (drag to orbit, scroll to zoom) &#x2192;**](https://opprah-maker.github.io/splat/s=bell_06) hosted on the portfolio site
 
 ### 8.5 Generation notes
 
