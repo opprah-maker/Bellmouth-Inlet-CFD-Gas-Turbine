@@ -1,4 +1,4 @@
-# Bellmouth Inlet &mdash; CFD Optimisation for a Gas Turbine
+# Bellmouth Inlet : CFD Optimisation for a Gas Turbine
 
 > Design and CFD optimisation of an elliptical bellmouth inlet to minimise inlet pressure
 > losses and maximise mass flow rate for a gas turbine engine. Solved in ANSYS Fluent
@@ -28,7 +28,7 @@ adverse pressure gradient flows.
 
 | Document | File |
 |---|---|
-| Baseline Design &mdash; Bellmouth inlet CFD | [`reports/Baseline-Design.pdf`](reports/Baseline-Design.pdf) |
+| Baseline Design : Bellmouth inlet CFD | [`reports/Baseline-Design.pdf`](reports/Baseline-Design.pdf) |
 
 Plain-text extract: [`reports/Baseline-Design_text.txt`](reports/Baseline-Design_text.txt).
 
@@ -54,7 +54,7 @@ Plain-text extract: [`reports/Baseline-Design_text.txt`](reports/Baseline-Design
 | Inlet | Mass flow inlet | $\dot{m} = 1.0\,\text{kg/s}$ |
 | Outlet | Pressure outlet | $p_g = 0\,\text{Pa}$ |
 | Bellmouth wall | No-slip wall | Standard wall functions |
-| Symmetry plane | Symmetry | &mdash; |
+| Symmetry plane | Symmetry | : |
 
 ---
 
