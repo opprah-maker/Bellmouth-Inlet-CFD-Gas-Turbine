@@ -285,18 +285,12 @@ The `.cas.h5` and `.msh` files in `original/` are the raw ANSYS Workbench files 
 
 ## 11. Engineering tools: what was taught, what was self-taught
 
-**Taught during the undergraduate programme (Wrexham University, BEng Aeronautical and Mechanical Engineering, 2016 to 2020):**
+**Taught during the undergraduate programme (Wrexham University, BEng Aeronautical and Mechanical Engineering, 2016 to 2020):** the Bellmouth project is an earlier individual project; the source predates the Wrexham BEng.
 
-The numerical methods, aerodynamics, and report-writing skills that underpin this project were taught in the BEng programme. The exact combination of modules and the specific commercial software in use at the time are not separately itemised here, because the value of this section is in the boundary between the taught chapter and the self-taught chapter that follows, not in a module-by-module transcript.
+- **The Bellmouth project.** The cover page of the source DOCX reads 'University of South Wales', and the project was carried over into the portfolio as the Bellmouth repo. The ANSYS Workbench workflow (SpaceClaim to Fluent meshing to Fluent solution to CFD-Post), the gas-turbine theory, and the bellmouth design-point conventions come from that project.
+- **Background from the BEng.** The underlying engineering mathematics (ODEs and PDEs, numerical methods), the technical-report conventions, and the broader gas-turbine theory were covered elsewhere in the BEng and provide the background for the report.
 
-In broad terms, the taught chapter covered:
 
-- The engineering mathematics that supports the work: differential equations, numerical methods, and stability analysis.
-- The relevant engineering science for each project (aerodynamics, heat transfer, energy systems, or aircraft design, depending on the assignment).
-- MATLAB for numerical-modelling assignments, including vectorised array operations, plotting, and small optimisation problems.
-- Technical report writing in British English, including structure, figure presentation, and referencing.
-
-The remainder of the work in this repository (the choice of specific software, the design of the figures, the addition of 3D visualisations, the conversion of Excel data to web-friendly formats, and the way the report is published on GitHub) is the self-taught chapter below.
 
 **Self-taught after graduation, in the home laboratory:**
 
