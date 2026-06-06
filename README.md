@@ -251,6 +251,58 @@ The full 3D splat gallery is at <https://opprah-maker.github.io/#3d>.
 
 ---
 
+## 8. How I built this
+
+This section describes the workflow that produced the analysis, the tools that were used at each stage, and the decisions that shaped the final report. The work was carried out in ANSYS Workbench 2023 R1 and the outputs were post-processed with the open-source tools that are listed at the end of this section.
+
+The workflow was as follows:
+
+1. **Geometry.** The baseline engine geometry (a circular-cross-section aero-engine inlet with a bell mouth of radius 0.09 m at the inlet) was created in ANSYS DesignModeler. The bell mouth was added on top of the engine geometry as a separate body, and the two were combined into a single fluid domain for meshing.
+2. **Mesh.** A structured mesh was generated with local refinement in the boundary layer on the bell-mouth and engine walls, in the region immediately downstream of the bell mouth (where separation was expected), and along the centreline of the engine.
+3. **Solver.** ANSYS Fluent was used to solve the steady-state RANS equations with the k-epsilon Realisable turbulence model. The inlet boundary was a pressure-far-field at 101325 Pa, the outlet was a mass-flow outlet, and the engine and bell-mouth walls were assigned a no-slip condition.
+4. **Post-processing.** Static pressure, total pressure, velocity magnitude, and X-velocity contours were extracted from the Fluent case and data files. The coefficient of discharge was calculated from the ratio of the actual mass flow to the ideal mass flow, and the static-pressure-recovery coefficient was calculated from the inlet and outlet static pressures.
+
+The figures in this repository are the outputs of that workflow. The `.cas.h5`, `.msh`, `.ip`, and `.set` files in the `original/` directory are the raw ANSYS Workbench files that were used to produce them.
+
+## 9. Thought process
+
+The motivation for the project was the observation that the inlet of a gas turbine is a major source of total-pressure loss, and that a well-designed bell mouth can recover a significant fraction of that loss by accelerating the flow smoothly into the engine. The coefficient of discharge and the static-pressure-recovery coefficient are the two non-dimensional parameters that quantify that recovery, and the assignment asked for both to be calculated for a bell mouth of a specified geometry.
+
+The decision to use the k-epsilon Realisable turbulence model rather than the standard k-epsilon model was taken because the Realisable formulation gives a more accurate prediction of the spreading rate of round jets and of the normal Reynolds stress in flows with strong curvature and separation, both of which are present in a bell-mouth inlet. The decision to use a single operating point (a fixed mass-flow rate at ambient conditions) was a pragmatic simplification: a full performance map at multiple flow rates would have been more comprehensive, but the assignment specification was a single-point analysis and the report was kept within that scope.
+
+The choice of bell-mouth geometry (a circular-cross-section inlet with a gradual taper angle defined by a circle of radius 0.09 m) was a deliberate departure from the more common conical bell mouth, on the basis that a smoothly curved profile minimises flow separation and therefore maximises the pressure recovery.
+
+## 10. Learning outcomes
+
+On completion of this project the following capabilities were demonstrated:
+
+- **CFD methodology.** Geometry clean-up in DesignModeler, structured mesh generation with local refinement, boundary-condition selection, solver setup with the k-epsilon Realisable turbulence model, convergence monitoring, and post-processing of pressure and velocity fields.
+- **Engineering judgement.** Selection of a turbulence model on the basis of the flow physics, awareness of the limitations of a single-point steady-state RANS analysis, and interpretation of the non-dimensional coefficients of discharge and static-pressure recovery.
+- **Quantitative analysis.** Calculation of the coefficient of discharge and the static-pressure-recovery coefficient from the Fluent post-processing data, and comparison of the calculated values against published data for similar bell-mouth geometries.
+- **Technical writing.** Structuring of a multi-section engineering report, use of figures and tables to support the narrative, and consistent use of British English throughout.
+
+The `.cas.h5` and `.msh` files in `original/` are the raw ANSYS Workbench files that produced the analysis; there is no MATLAB or Python code in this repository, and the report is a pure CFD study.
+
+## 11. Engineering tools: what was taught, what was self-taught
+
+**Taught during the undergraduate programme (Brunel University, Aerospace Engineering):**
+
+- ANSYS Fluent for steady-state RANS analysis of internal flows, including the k-epsilon and k-omega families of turbulence models.
+- ANSYS DesignModeler and ANSYS Meshing for geometry clean-up and mesh generation.
+- Theoretical aerodynamics (potential flow, boundary-layer theory, panel methods).
+- Gas-turbine theory (inlet design, compressor and turbine performance, combustor design).
+- Technical report writing in British English.
+
+**Self-taught after graduation, in the home laboratory:**
+
+- Python (NumPy, SciPy, Matplotlib, Pandas) for data analysis, plotting, and small utilities.
+- Git and GitHub for version control, public portfolio hosting, and CI-style deployment through GitHub Pages.
+- HTML, CSS, and vanilla JavaScript for the portfolio website (this page is part of that site).
+- Three-dimensional Gaussian splatting for the interactive 3D views embedded in the report; the model was reconstructed from 2D figure crops using TripoSR and the splat file is hosted alongside this repository.
+- Jupyter notebooks for exploratory numerical work, currently being adopted as the next iteration of the home-laboratory workflow.
+
+The line between the two lists is not always sharp: the ANSYS skills were taught, and the Python, Git, HTML/CSS, and 3D skills were self-taught. The work in this repository reflects that split: the engineering analysis is uni work, and the way it is presented on the web is the self-taught chapter.
+
 ## 9. Topics
 
 `cfd` `ansys-fluent` `bellmouth-inlet` `gas-turbine` `aerospace-engineering` `aerodynamics`
