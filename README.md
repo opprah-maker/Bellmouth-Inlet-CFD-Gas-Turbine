@@ -94,31 +94,98 @@ adverse pressure gradient flows.
 
 All 23 figures from the bellmouth inlet CFD report. Each is linked to its file in `images/`.
 
-| Fig. | Preview | Description |
-|---|---|---|
-| 1 | <a href="images/figure-01.png"><img src="images/figure-01.png" width="120" alt="Figure 1"></a> | Inlet geometry — elliptical bellmouth with D = 100 mm, ellipse ratio a/b = 0.5 |
-| 2 | <a href="images/figure-02.jpeg"><img src="images/figure-02.jpeg" width="120" alt="Figure 2"></a> | Inlet geometry detail — leading-edge curvature and wall thickness |
-| 3 | <a href="images/figure-03.png"><img src="images/figure-03.png" width="120" alt="Figure 3"></a> | Computational domain — inlet plenum, bellmouth, and downstream pipe |
-| 4 | <a href="images/figure-04.jpeg"><img src="images/figure-04.jpeg" width="120" alt="Figure 4"></a> | Mesh overview — unstructured tetrahedra with inflation layers on the wall |
-| 5 | <a href="images/figure-05.png"><img src="images/figure-05.png" width="120" alt="Figure 5"></a> | Mesh quality — skewness distribution (max < 0.85) |
-| 6 | <a href="images/figure-06.jpeg"><img src="images/figure-06.jpeg" width="120" alt="Figure 6"></a> | Mesh quality — orthogonal quality distribution (min > 0.15) |
-| 7 | <a href="images/figure-07.png"><img src="images/figure-07.png" width="120" alt="Figure 7"></a> | Boundary layer mesh — inflation layers near the wall with y+ < 1 |
-| 8 | <a href="images/figure-08.png"><img src="images/figure-08.png" width="120" alt="Figure 8"></a> | Mesh independence study — pressure drop vs. element count |
-| 9 | <a href="images/figure-09.png"><img src="images/figure-09.png" width="120" alt="Figure 9"></a> | Velocity contour — throughflow showing acceleration through the bellmouth |
-| 10 | <a href="images/figure-10.png"><img src="images/figure-10.png" width="120" alt="Figure 10"></a> | Static pressure contour — pressure recovery downstream of the throat |
-| 11 | <a href="images/figure-11.png"><img src="images/figure-11.png" width="120" alt="Figure 11"></a> | Total pressure contour — total-pressure loss distribution |
-| 12 | <a href="images/figure-12.png"><img src="images/figure-12.png" width="120" alt="Figure 12"></a> | Dynamic pressure contour — q = 0.5 rho V^2 distribution |
-| 13 | <a href="images/figure-13.png"><img src="images/figure-13.png" width="120" alt="Figure 13"></a> | Wall shear stress — viscous stress on the bellmouth surface |
-| 14 | <a href="images/figure-14.png"><img src="images/figure-14.png" width="120" alt="Figure 14"></a> | Velocity profile at exit — uniform profile confirming flow conditioning |
-| 15 | <a href="images/figure-15.png"><img src="images/figure-15.png" width="120" alt="Figure 15"></a> | Pressure coefficient Cp — surface distribution along the bellmouth |
-| 16 | <a href="images/figure-16.png"><img src="images/figure-16.png" width="120" alt="Figure 16"></a> | Total pressure recovery eta_p — axial distribution showing recovery |
-| 17 | <a href="images/figure-17.jpeg"><img src="images/figure-17.jpeg" width="120" alt="Figure 17"></a> | Velocity vector plot — secondary flow visualisation |
-| 18 | <a href="images/figure-18.png"><img src="images/figure-18.png" width="120" alt="Figure 18"></a> | Streamlines — 3D streamlines coloured by velocity magnitude |
-| 19 | <a href="images/figure-19.jpg"><img src="images/figure-19.jpg" width="120" alt="Figure 19"></a> | Validation — CFD vs. von Karman integral boundary layer method |
-| 20 | <a href="images/figure-20.jpg"><img src="images/figure-20.jpg" width="120" alt="Figure 20"></a> | Validation — pressure drop vs. mass flow rate comparison |
-| 21 | <a href="images/figure-21.jpg"><img src="images/figure-21.jpg" width="120" alt="Figure 21"></a> | Validation — discharge coefficient Cd vs. Reynolds number |
-| 22 | <a href="images/figure-22.jpg"><img src="images/figure-22.jpg" width="120" alt="Figure 22"></a> | Contour plot — static pressure on the symmetry plane |
-| 23 | <a href="images/figure-23.jpg"><img src="images/figure-23.jpg" width="120" alt="Figure 23"></a> | Contour plot — velocity magnitude on the symmetry plane |
+**Figure 1** — Inlet geometry — elliptical bellmouth with D = 100 mm, ellipse ratio a/b = 0.5
+
+[![](images/figure-01.png)](images/figure-01.png)
+
+**Figure 2** — Inlet geometry detail — leading-edge curvature and wall thickness
+
+[![](images/figure-02.jpeg)](images/figure-02.jpeg)
+
+**Figure 3** — Computational domain — inlet plenum, bellmouth, and downstream pipe
+
+[![](images/figure-03.png)](images/figure-03.png)
+
+**Figure 4** — Mesh overview — unstructured tetrahedra with inflation layers on the wall
+
+[![](images/figure-04.jpeg)](images/figure-04.jpeg)
+
+**Figure 5** — Mesh quality — skewness distribution (max < 0.85)
+
+[![](images/figure-05.png)](images/figure-05.png)
+
+**Figure 6** — Mesh quality — orthogonal quality distribution (min > 0.15)
+
+[![](images/figure-06.jpeg)](images/figure-06.jpeg)
+
+**Figure 7** — Boundary layer mesh — inflation layers near the wall with y+ < 1
+
+[![](images/figure-07.png)](images/figure-07.png)
+
+**Figure 8** — Mesh independence study — pressure drop vs. element count
+
+[![](images/figure-08.png)](images/figure-08.png)
+
+**Figure 9** — Velocity contour — throughflow showing acceleration through the bellmouth
+
+[![](images/figure-09.png)](images/figure-09.png)
+
+**Figure 10** — Static pressure contour — pressure recovery downstream of the throat
+
+[![](images/figure-10.png)](images/figure-10.png)
+
+**Figure 11** — Total pressure contour — total-pressure loss distribution
+
+[![](images/figure-11.png)](images/figure-11.png)
+
+**Figure 12** — Dynamic pressure contour — q = 0.5 rho V^2 distribution
+
+[![](images/figure-12.png)](images/figure-12.png)
+
+**Figure 13** — Wall shear stress — viscous stress on the bellmouth surface
+
+[![](images/figure-13.png)](images/figure-13.png)
+
+**Figure 14** — Velocity profile at exit — uniform profile confirming flow conditioning
+
+[![](images/figure-14.png)](images/figure-14.png)
+
+**Figure 15** — Pressure coefficient Cp — surface distribution along the bellmouth
+
+[![](images/figure-15.png)](images/figure-15.png)
+
+**Figure 16** — Total pressure recovery eta_p — axial distribution showing recovery
+
+[![](images/figure-16.png)](images/figure-16.png)
+
+**Figure 17** — Velocity vector plot — secondary flow visualisation
+
+[![](images/figure-17.jpeg)](images/figure-17.jpeg)
+
+**Figure 18** — Streamlines — 3D streamlines coloured by velocity magnitude
+
+[![](images/figure-18.png)](images/figure-18.png)
+
+**Figure 19** — Validation — CFD vs. von Karman integral boundary layer method
+
+[![](images/figure-19.jpg)](images/figure-19.jpg)
+
+**Figure 20** — Validation — pressure drop vs. mass flow rate comparison
+
+[![](images/figure-20.jpg)](images/figure-20.jpg)
+
+**Figure 21** — Validation — discharge coefficient Cd vs. Reynolds number
+
+[![](images/figure-21.jpg)](images/figure-21.jpg)
+
+**Figure 22** — Contour plot — static pressure on the symmetry plane
+
+[![](images/figure-22.jpg)](images/figure-22.jpg)
+
+**Figure 23** — Contour plot — velocity magnitude on the symmetry plane
+
+[![](images/figure-23.jpg)](images/figure-23.jpg)
+
 
 ---
 
