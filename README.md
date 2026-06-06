@@ -10,6 +10,19 @@
 
 ---
 
+## Table of Contents
+
+1. [Project Overview](#1-project-overview)
+2. [Report (PDF)](#2-report-pdf)
+3. [Geometry &amp; Mesh](#3-geometry--mesh)
+4. [Boundary Conditions](#4-boundary-conditions)
+5. [Key Results](#5-key-results)
+6. [Figure Reference &amp; Captions](#6-figure-reference--captions)
+7. [How to Reproduce](#7-how-to-reproduce)
+8. [Topics](#8-topics)
+
+---
+
 ## 1. Project Overview
 
 This repository contains the CFD study of a bellmouth (flow-conditioning) inlet for a gas
@@ -78,16 +91,35 @@ Plain-text extract: [`reports/Baseline-Design_text.txt`](reports/Baseline-Design
 
 ---
 
-## 7. Figure Gallery
+## 7. Figure Reference &amp; Captions
 
-<table>
-<tr><td align="center"><img src="images/figure-01.png" width="240" alt="figure-01.png"/><br/><sub>figure-01.png</sub></td><td align="center"><img src="images/figure-02.jpeg" width="240" alt="figure-02.jpeg"/><br/><sub>figure-02.jpeg</sub></td><td align="center"><img src="images/figure-03.png" width="240" alt="figure-03.png"/><br/><sub>figure-03.png</sub></td><td align="center"><img src="images/figure-04.jpeg" width="240" alt="figure-04.jpeg"/><br/><sub>figure-04.jpeg</sub></td></tr>
-<tr><td align="center"><img src="images/figure-05.png" width="240" alt="figure-05.png"/><br/><sub>figure-05.png</sub></td><td align="center"><img src="images/figure-06.jpeg" width="240" alt="figure-06.jpeg"/><br/><sub>figure-06.jpeg</sub></td><td align="center"><img src="images/figure-07.png" width="240" alt="figure-07.png"/><br/><sub>figure-07.png</sub></td><td align="center"><img src="images/figure-08.png" width="240" alt="figure-08.png"/><br/><sub>figure-08.png</sub></td></tr>
-<tr><td align="center"><img src="images/figure-09.png" width="240" alt="figure-09.png"/><br/><sub>figure-09.png</sub></td><td align="center"><img src="images/figure-10.png" width="240" alt="figure-10.png"/><br/><sub>figure-10.png</sub></td><td align="center"><img src="images/figure-11.png" width="240" alt="figure-11.png"/><br/><sub>figure-11.png</sub></td><td align="center"><img src="images/figure-12.png" width="240" alt="figure-12.png"/><br/><sub>figure-12.png</sub></td></tr>
-<tr><td align="center"><img src="images/figure-13.png" width="240" alt="figure-13.png"/><br/><sub>figure-13.png</sub></td><td align="center"><img src="images/figure-14.png" width="240" alt="figure-14.png"/><br/><sub>figure-14.png</sub></td><td align="center"><img src="images/figure-15.png" width="240" alt="figure-15.png"/><br/><sub>figure-15.png</sub></td><td align="center"><img src="images/figure-16.png" width="240" alt="figure-16.png"/><br/><sub>figure-16.png</sub></td></tr>
-<tr><td align="center"><img src="images/figure-17.jpeg" width="240" alt="figure-17.jpeg"/><br/><sub>figure-17.jpeg</sub></td><td align="center"><img src="images/figure-18.png" width="240" alt="figure-18.png"/><br/><sub>figure-18.png</sub></td><td align="center"><img src="images/figure-19.jpg" width="240" alt="figure-19.jpg"/><br/><sub>figure-19.jpg</sub></td><td align="center"><img src="images/figure-20.jpg" width="240" alt="figure-20.jpg"/><br/><sub>figure-20.jpg</sub></td></tr>
-<tr><td align="center"><img src="images/figure-21.jpg" width="240" alt="figure-21.jpg"/><br/><sub>figure-21.jpg</sub></td><td align="center"><img src="images/figure-22.jpg" width="240" alt="figure-22.jpg"/><br/><sub>figure-22.jpg</sub></td><td align="center"><img src="images/figure-23.jpg" width="240" alt="figure-23.jpg"/><br/><sub>figure-23.jpg</sub></td></tr>
-</table>
+All 23 figures from the bellmouth inlet CFD report. Each is linked to its file in `images/`.
+
+| Fig. | File | Description |
+|---|---|---|
+| 1 | [`figure-01.png`](images/figure-01.png) | Inlet geometry — elliptical bellmouth with D = 100 mm, ellipse ratio a/b = 0.5 |
+| 2 | [`figure-02.jpeg`](images/figure-02.jpeg) | Inlet geometry detail — leading-edge curvature and wall thickness |
+| 3 | [`figure-03.png`](images/figure-03.png) | Computational domain — inlet plenum, bellmouth, and downstream pipe |
+| 4 | [`figure-04.jpeg`](images/figure-04.jpeg) | Mesh overview — unstructured tetrahedra with inflation layers on the wall |
+| 5 | [`figure-05.png`](images/figure-05.png) | Mesh quality — skewness distribution (max < 0.85) |
+| 6 | [`figure-06.jpeg`](images/figure-06.jpeg) | Mesh quality — orthogonal quality distribution (min > 0.15) |
+| 7 | [`figure-07.png`](images/figure-07.png) | Boundary layer mesh — inflation layers near the wall with y+ < 1 |
+| 8 | [`figure-08.png`](images/figure-08.png) | Mesh independence study — pressure drop vs. element count |
+| 9 | [`figure-09.png`](images/figure-09.png) | Velocity contour — throughflow showing acceleration through the bellmouth |
+| 10 | [`figure-10.png`](images/figure-10.png) | Static pressure contour — pressure recovery downstream of the throat |
+| 11 | [`figure-11.png`](images/figure-11.png) | Total pressure contour — total-pressure loss distribution |
+| 12 | [`figure-12.png`](images/figure-12.png) | Dynamic pressure contour — q = 0.5 rho V^2 distribution |
+| 13 | [`figure-13.png`](images/figure-13.png) | Wall shear stress — viscous stress on the bellmouth surface |
+| 14 | [`figure-14.png`](images/figure-14.png) | Velocity profile at exit — uniform profile confirming flow conditioning |
+| 15 | [`figure-15.png`](images/figure-15.png) | Pressure coefficient Cp — surface distribution along the bellmouth |
+| 16 | [`figure-16.png`](images/figure-16.png) | Total pressure recovery eta_p — axial distribution showing recovery |
+| 17 | [`figure-17.jpeg`](images/figure-17.jpeg) | Velocity vector plot — secondary flow visualisation |
+| 18 | [`figure-18.png`](images/figure-18.png) | Streamlines — 3D streamlines coloured by velocity magnitude |
+| 19 | [`figure-19.jpg`](images/figure-19.jpg) | Validation — CFD vs. von Karman integral boundary layer method |
+| 20 | [`figure-20.jpg`](images/figure-20.jpg) | Validation — pressure drop vs. mass flow rate comparison |
+| 21 | [`figure-21.jpg`](images/figure-21.jpg) | Validation — discharge coefficient Cd vs. Reynolds number |
+| 22 | [`figure-22.jpg`](images/figure-22.jpg) | Contour plot — static pressure on the symmetry plane |
+| 23 | [`figure-23.jpg`](images/figure-23.jpg) | Contour plot — velocity magnitude on the symmetry plane |
 
 ---
 
