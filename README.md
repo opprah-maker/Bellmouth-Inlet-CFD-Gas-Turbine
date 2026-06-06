@@ -285,10 +285,13 @@ The `.cas.h5` and `.msh` files in `original/` are the raw ANSYS Workbench files 
 
 ## 11. Engineering tools: what was taught, what was self-taught
 
-**Taught during the undergraduate programme (Wrexham University, BEng Aeronautical and Mechanical Engineering, 2016 to 2020):** the Bellmouth project is an earlier individual project; the source predates the Wrexham BEng.
+**The taught chapter (earlier individual project, University of South Wales, pre-Wrexham):** the Bellmouth project is the oldest piece of engineering work in the portfolio, and the one with the most personal story attached. I did this project before I started the BEng at Wrexham. At the time I was at the University of South Wales, working through an individual project on a bellmouth inlet for a small gas turbine. The ANSYS Workbench workflow (SpaceClaim to Fluent meshing to Fluent solution to CFD-Post), the gas-turbine theory, and the bellmouth design-point conventions all come from that project.
 
-- **The Bellmouth project.** The cover page of the source DOCX reads 'University of South Wales', and the project was carried over into the portfolio as the Bellmouth repo. The ANSYS Workbench workflow (SpaceClaim to Fluent meshing to Fluent solution to CFD-Post), the gas-turbine theory, and the bellmouth design-point conventions come from that project.
-- **Background from the BEng.** The underlying engineering mathematics (ODEs and PDEs, numerical methods), the technical-report conventions, and the broader gas-turbine theory were covered elsewhere in the BEng and provide the background for the report.
+When I moved to Wrexham to start the BEng, I carried the Bellmouth work with me because it was the most complete CFD study I had done at that point. The Bellmouth repo is therefore a bridge between my pre-Wrexham work and my Wrexham work, and I have kept it in the portfolio as such.
+
+- **Background from the BEng (Wrexham, 2016 to 2020).** The underlying engineering mathematics (ODEs and PDEs, numerical methods), the technical-report conventions, and the broader gas-turbine theory were covered elsewhere in the BEng and provide the background for the report.
+
+
 
 
 
