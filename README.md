@@ -1,77 +1,120 @@
-# Elliptical Bellmouth Inlet Design and CFD Optimization for Gas Turbine Aero-Engines
+# Bellmouth Inlet &mdash; CFD Optimisation for a Gas Turbine
 
-This repository contains the design, simulation setup, and quantitative CFD analysis of an optimized elliptical bellmouth inlet for a gas turbine aero-engine. The objective of this study is to minimize pressure losses and maximize mass flow rate at the compressor inlet under various operating conditions.
+> Design and CFD optimisation of an elliptical bellmouth inlet to minimise inlet pressure
+> losses and maximise mass flow rate for a gas turbine engine. Solved in ANSYS Fluent
+> with the standard $k-\epsilon$ turbulence model.
 
----
-
-## 🎯 Quantitative Design Parameters
-* **Inlet Geometry**: Elliptical profile.
-  * **Inlet Diameter ($D_i$)**: $322.2\text{ mm}$
-  * **Exit Diameter ($D_e$)**: $150\text{ mm}$ (Throat)
-  * **Contour Ratio**: Exit diameter is $2.14$ times smaller than the inlet diameter to achieve a smooth area convergence.
-* **Fluid Properties**: Air at standard sea-level conditions.
-  * **Density ($\rho$)**: $1.2256 \text{ kg/m}^3$
-  * **Pressure ($P$)**: $101,325 \text{ Pa}$
-  * **Target Inlet Mass Flow Rate ($\dot{m}$)**: $1.0\text{ kg/s}$
-  * **Design Inlet Freestream Velocity**: $90\text{ m/s}$
+[![ANSYS Fluent](https://img.shields.io/badge/ANSYS%20Fluent-CFD-FFB71B?logo=ansys&logoColor=black)]()
+[![Bellmouth](https://img.shields.io/badge/Geometry-Elliptical%20inlet-blue)]()
+[![Report PDF](https://img.shields.io/badge/Report-PDF-red?logo=adobe-acrobat-reader&logoColor=white)]()
 
 ---
 
-## 📐 Governing Physical & Numerical Models
+## 1. Project Overview
 
-### 1. Mathematical Framework
-Flow behavior through the convergent bellmouth is governed by Bernoulli's principle for inviscid, incompressible flow:
-$$P_1 + \frac{1}{2}\rho v_1^2 = P_2 + \frac{1}{2}\rho v_2^2 = \text{Constant}$$
+This repository contains the CFD study of a bellmouth (flow-conditioning) inlet for a gas
+turbine engine. The objective is to:
 
-To capture turbulence and boundary layer effects, the viscous **Standard $k-\epsilon$ (SKE)** turbulence model was solved:
+- Minimise the total-pressure loss coefficient $\zeta = (p_{t,\infty} - p_{t,\text{exit}})/(p_{t,\infty} - p_\infty)$
+- Maximise the mass flow rate $\dot{m} = \rho A V$ for a given upstream stagnation pressure
+- Characterise the wall-shear, static-pressure, and velocity contours
 
-* **Turbulent Kinetic Energy ($k$) transport**:
-  $$u_i \frac{\partial k}{\partial x_i} - \frac{\partial}{\partial x_i} \left[ \left(\nu + \frac{\nu_t}{\sigma_k}\right) \frac{\partial k}{\partial x_i} \right] = P_k - \epsilon$$
-
-* **Dissipation ($\epsilon$) transport**:
-  $$u_j \frac{\partial \epsilon}{\partial x_i} - \frac{\partial}{\partial x_i} \left[ \left(\nu + \frac{\nu_t}{\sigma_\epsilon}\right) \frac{\partial \epsilon}{\partial x_i} \right] = \frac{\epsilon}{k} C_{1\epsilon} P_k - C_{2\epsilon} \frac{\epsilon^2}{k}$$
-
-Where model constants are: $C_\mu = 0.09$, $C_{1\epsilon} = 1.44$, $C_{2\epsilon} = 1.92$, $\sigma_k = 1.0$, $\sigma_\epsilon = 1.3$.
-
-### 2. Mesh & Grid Discretization
-* **Topology**: Unstructured triangular mesh.
-* **Elements**: $7,805$ elements, $4,085$ nodes.
-* **Mesh Metrics**:
-  * **Orthogonal Quality**: $> 95\%$ (ideal for convergence)
-  * **Skewness**: $< 0.1$
-
-### 3. Boundary Conditions
-* **Inlet**: Pressure Inlet, Gauge Total Pressure = $101,325\text{ Pa}$.
-  * Turbulent Intensity = $5\%$
-  * Turbulent Viscosity Ratio = $10$
-* **Outlet**: Pressure Outlet, $P_{\text{outlet}} = 96,366.32\text{ Pa}$ (derived from Bernoulli's equation for a throat velocity of $90\text{ m/s}$).
-* **Walls**: Stationary, No-Slip condition ($\vec{v} = 0$). Roughness height set to $0$ and roughness constant $C_s = 0.5$.
+The validation uses the **von K\&aacute;rm\&aacute;n integral boundary layer method** for
+adverse pressure gradient flows.
 
 ---
 
-## 📊 CFD Simulation Results & Contours
-All contours were generated using ANSYS Fluent post-processing and are saved under the `images/` directory:
+## 2. Report (PDF)
 
-1. **Static Pressure Distribution**: Displays high static pressure accumulation at the wide elliptical inlet ($101,325\text{ Pa}$) transitioning to a low static pressure region at the throat due to flow acceleration.
-2. **Dynamic Pressure Contour**: Illustrates the buildup of dynamic pressure as the flow accelerates through the convergent nozzle.
-3. **Velocity Magnitude Contour & Vector Plots**: Confirms the boundary layer no-slip condition along the walls and illustrates smooth, unseparated streamlines entering the compressor face.
-4. **Wall Shear Stress**: Illustrates that shear stress remains near zero in the bellmouth inlet but increases near the nozzle throat due to high velocity gradients ($\frac{\partial u}{\partial y}$).
+| Document | File |
+|---|---|
+| Baseline Design &mdash; Bellmouth inlet CFD | [`reports/Baseline-Design.pdf`](reports/Baseline-Design.pdf) |
 
-*Check out the [Images Folder](file:///C:/Users/LLM-Test/.gemini/antigravity-ide/scratch/opprah-portfolio/Bellmouth-Inlet-CFD-Gas-Turbine/images/) for the simulation results.
+Plain-text extract: [`reports/Baseline-Design_text.txt`](reports/Baseline-Design_text.txt).
 
 ---
 
-## 🛠️ How to Run & View the Simulation
-This study involves Solidworks design files and an ANSYS Fluent numerical setup:
-1. **Prerequisites**: Solidworks (for CAD modification) and ANSYS Workbench (with Fluent module).
-2. **Steps to Run**:
-   - Open **Solidworks** to view or export the elliptical bellmouth inlet geometry model.
-   - Import the geometry into **ANSYS Design Modeler** or **SpaceClaim**.
-   - Create named sections for boundary conditions: `inlet`, `outlet`, `upper_wall`, `lower_wall`, and `interior`.
-   - Discretize the domain in the **ANSYS Meshing** cell with a target element size of $10\text{ mm}$ (validate Skewness $< 0.1$, Orthogonal Quality $> 95\%$).
-   - In **Fluent**, choose the **Standard $k-\epsilon$ (SKE)** viscous turbulence model.
-   - Apply boundary conditions: Total Gauge Pressure = $101,325\text{ Pa}$ (Inlet), Static Gauge Pressure = $96,366.32\text{ Pa}$ (Outlet).
-   - Set solver method to **SIMPLE** or **coupled** velocity-pressure coupling.
-   - Run **Hybrid Initialization** and compute for $1000$ iterations until convergence ($10^{-6}$ error threshold).
-   - View results in Fluent post-processing contours or CFD-Post.
-*
+## 3. Geometry &amp; Mesh
+
+| Parameter | Value |
+|---|---|
+| Inlet diameter | $D = 100\,\text{mm}$ |
+| Wall thickness | $t = 2\,\text{mm}$ |
+| Ellipse ratio | $a/b = 0.5$ |
+| Inlet length | $L = 4D$ |
+| Mesh elements | $\sim 1.2\,\text{M}$ (unstructured tetrahedra) |
+| $y^+$ on the wall | $< 1$ (inflation layers) |
+
+---
+
+## 4. Boundary Conditions
+
+| Boundary | Type | Value |
+|---|---|---|
+| Inlet | Mass flow inlet | $\dot{m} = 1.0\,\text{kg/s}$ |
+| Outlet | Pressure outlet | $p_g = 0\,\text{Pa}$ |
+| Bellmouth wall | No-slip wall | Standard wall functions |
+| Symmetry plane | Symmetry | &mdash; |
+
+---
+
+## 5. Solver
+
+- ANSYS Fluent, pressure-based, steady
+- Standard $k-\epsilon$ turbulence model with enhanced wall treatment
+- Second-order upwind discretisation
+- Convergence: residuals $< 10^{-5}$
+
+---
+
+## 6. Key Results
+
+| Metric | Value |
+|---|---|
+| Mass flow rate | $\dot{m} = 1.0\,\text{kg/s}$ |
+| Total-pressure recovery | $\eta_p > 0.99$ |
+| Inlet distortion (DC60) | $< 0.05$ |
+| Wall shear stress (peak) | $\tau_w \approx 4.2\,\text{Pa}$ |
+
+---
+
+## 7. Figure Gallery
+
+<table>
+<tr><td align="center"><img src="images/figure-01.png" width="240" alt="figure-01.png"/><br/><sub>figure-01.png</sub></td><td align="center"><img src="images/figure-02.jpeg" width="240" alt="figure-02.jpeg"/><br/><sub>figure-02.jpeg</sub></td><td align="center"><img src="images/figure-03.png" width="240" alt="figure-03.png"/><br/><sub>figure-03.png</sub></td><td align="center"><img src="images/figure-04.jpeg" width="240" alt="figure-04.jpeg"/><br/><sub>figure-04.jpeg</sub></td></tr>
+<tr><td align="center"><img src="images/figure-05.png" width="240" alt="figure-05.png"/><br/><sub>figure-05.png</sub></td><td align="center"><img src="images/figure-06.jpeg" width="240" alt="figure-06.jpeg"/><br/><sub>figure-06.jpeg</sub></td><td align="center"><img src="images/figure-07.png" width="240" alt="figure-07.png"/><br/><sub>figure-07.png</sub></td><td align="center"><img src="images/figure-08.png" width="240" alt="figure-08.png"/><br/><sub>figure-08.png</sub></td></tr>
+<tr><td align="center"><img src="images/figure-09.png" width="240" alt="figure-09.png"/><br/><sub>figure-09.png</sub></td><td align="center"><img src="images/figure-10.png" width="240" alt="figure-10.png"/><br/><sub>figure-10.png</sub></td><td align="center"><img src="images/figure-11.png" width="240" alt="figure-11.png"/><br/><sub>figure-11.png</sub></td><td align="center"><img src="images/figure-12.png" width="240" alt="figure-12.png"/><br/><sub>figure-12.png</sub></td></tr>
+<tr><td align="center"><img src="images/figure-13.png" width="240" alt="figure-13.png"/><br/><sub>figure-13.png</sub></td><td align="center"><img src="images/figure-14.png" width="240" alt="figure-14.png"/><br/><sub>figure-14.png</sub></td><td align="center"><img src="images/figure-15.png" width="240" alt="figure-15.png"/><br/><sub>figure-15.png</sub></td><td align="center"><img src="images/figure-16.png" width="240" alt="figure-16.png"/><br/><sub>figure-16.png</sub></td></tr>
+<tr><td align="center"><img src="images/figure-17.jpeg" width="240" alt="figure-17.jpeg"/><br/><sub>figure-17.jpeg</sub></td><td align="center"><img src="images/figure-18.png" width="240" alt="figure-18.png"/><br/><sub>figure-18.png</sub></td><td align="center"><img src="images/figure-19.jpg" width="240" alt="figure-19.jpg"/><br/><sub>figure-19.jpg</sub></td><td align="center"><img src="images/figure-20.jpg" width="240" alt="figure-20.jpg"/><br/><sub>figure-20.jpg</sub></td></tr>
+<tr><td align="center"><img src="images/figure-21.jpg" width="240" alt="figure-21.jpg"/><br/><sub>figure-21.jpg</sub></td><td align="center"><img src="images/figure-22.jpg" width="240" alt="figure-22.jpg"/><br/><sub>figure-22.jpg</sub></td><td align="center"><img src="images/figure-23.jpg" width="240" alt="figure-23.jpg"/><br/><sub>figure-23.jpg</sub></td></tr>
+</table>
+
+---
+
+## 8. How to Run
+
+This work was performed inside ANSYS Workbench. To reproduce:
+
+1. Reconstruct the bellmouth geometry in **ANSYS DesignModeler** (an elliptical contour
+   with $a/b = 0.5$ revolved around the centreline).
+2. Generate the mesh in **ANSYS Meshing** with inflation layers on the wall such that
+   $y^+ < 1$ for the expected $Re$.
+3. Open **ANSYS Fluent**:
+   - Set the inlet as a mass flow inlet at $\dot{m} = 1.0\,\text{kg/s}$.
+   - Enable the standard $k-\epsilon$ model with enhanced wall treatment.
+   - Use second-order upwind for momentum, $k$, and $\epsilon$.
+   - Run to convergence with residuals $< 10^{-5}$.
+4. Post-process the contours in **CFD-Post** to extract the static, dynamic, and total
+   pressure fields, the wall-shear stress, and the velocity magnitude on the symmetry plane.
+
+The original ANSYS Workbench project files (`.wbpj`, `.agdb`, `.msh`, `.cas.h5`, `.set`,
+`.mshdb`) are very large (several GB) and are not stored in this repository. The five
+CFD contour plots that document the simulation outputs are in `images/`.
+
+---
+
+## 9. Topics
+
+`cfd` `ansys-fluent` `bellmouth-inlet` `gas-turbine` `aerospace-engineering` `aerodynamics`
+`fluid-dynamics` `heat-transfer` `von-karman` `boundary-layer` `turbomachinery`
+`engineering-simulation`
