@@ -43,8 +43,6 @@ adverse pressure gradient flows.
 |---|---|
 | Baseline Design : Bellmouth inlet CFD | [`reports/Baseline-Design.pdf`](reports/Baseline-Design.pdf) |
 
-Plain-text extract: [`reports/Baseline-Design_text.txt`](reports/Baseline-Design_text.txt).
-
 ---
 
 ## 3. Geometry &amp; Mesh
