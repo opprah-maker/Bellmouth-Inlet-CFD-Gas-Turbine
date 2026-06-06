@@ -1,5 +1,8 @@
 # Bellmouth Inlet : CFD Optimisation for a Gas Turbine
 
+<!-- Last refreshed: 2026-06-06 -->
+
+
 > Design and CFD optimisation of an elliptical bellmouth inlet to minimise inlet pressure
 > losses and maximise mass flow rate for a gas turbine engine. Solved in ANSYS Fluent
 > with the standard k-epsilon turbulence model.
